@@ -20,7 +20,6 @@
             </service>
         </config-file>
 
-        <!-- @todo:david rename package? -->
         <source-file src="src/android/FirebaseMessagingRouterService.java" target-dir="src/com/zenput/push" />
     </platform>
 </plugin>
