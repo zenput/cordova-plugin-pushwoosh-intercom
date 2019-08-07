@@ -1,21 +1,18 @@
 package com.zenput.push;
 
-import com.google.firebase.messaging.FirebaseInstanceIdService;
+import com.google.firebase.messaging.FirebaseMessagingService;
 import io.intercom.android.sdk.push.IntercomPushClient;
 
-public class FirebaseInstanceIdRouterService extends FirebaseInstanceIdService {
+public class FirebaseInstanceIdRouterService extends FirebaseMessagingService {
 
     @Override
-    public void onTokenRefresh() {
-        // Get updated InstanceID token.
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-
+    public void onNewToken(String token) {
         // Send a new token to Pushwoosh
-        PushwooshFcmHelper.onTokenRefresh(this, refreshedToken);
+        PushwooshFcmHelper.onTokenRefresh(this, token);
         sendTokenToAnotherService(token);
     }
 
     private void sendTokenToAnotherService(String token) {
-        intercomPushClient.sendTokenToIntercom(getApplication(), refreshedToken);
+        intercomPushClient.sendTokenToIntercom(getApplication(), token);
     }
 }
