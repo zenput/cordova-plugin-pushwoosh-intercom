@@ -1,8 +1,6 @@
 package com.zenput.push;
 
-import com.google.firebase.messaging.FirebaseMessagingService;
-import com.google.firebase.messaging.RemoteMessage;
-import com.pushwoosh.PushwooshFcmHelper;
+import com.google.firebase.messaging.FirebaseInstanceIdService;
 import io.intercom.android.sdk.push.IntercomPushClient;
 
 public class FirebaseInstanceIdRouterService extends FirebaseInstanceIdService {
