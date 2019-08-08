@@ -13,7 +13,7 @@
         <dependency id="cordova-plugin-intercom" version="^6.2.0" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <service android:name="com.zenput.push.FirebaseMessagingRouterService",
+            <service android:name="com.zenput.push.FirebaseMessagingRouterService"
                      android:stopWithTask="false">
                 <intent-filter>
                     <action android:name="com.google.firebase.MESSAGING_EVENT" />
