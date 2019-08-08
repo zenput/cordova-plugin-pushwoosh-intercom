@@ -26,10 +26,7 @@ public class FirebaseMessagingRouterService extends FirebaseMessagingService {
    public void onNewToken(String token) {
        // Send a new token to Pushwoosh
        PushwooshFcmHelper.onTokenRefresh(this, token);
-       sendTokenToAnotherService(token);
-   }
-
-   private void sendTokenToAnotherService(String token) {
+       // send the new token to Intercom
        IntercomPushClient intercomPushClient = new IntercomPushClient();
        intercomPushClient.sendTokenToIntercom(getApplication(), token);
    }
