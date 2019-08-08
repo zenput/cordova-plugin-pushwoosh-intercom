@@ -7,19 +7,3 @@ This is a Cordova plugin for use in conjunction with [pushwoosh-cordova-plugin](
     ```sh
     npx cordova plugin add git+ssh://git@github.com/zenput/cordova-plugin-pushwoosh-intercom.git
     ```
-
-1. In your JS code, send any push tokens from Pushwoosh to Intercom as well:
-
-    ```js
-    var pushwoosh = cordova.require('pushwoosh-cordova-plugin.PushNotification');
-
-    pushwoosh.onDeviceReady({ /* ... */ });
-
-    pushwoosh.registerDevice(function(status) {
-        var token = status.pushToken;
-
-        intercom.sendPushTokenToIntercom(token);
-
-        // ... save the token yourself, e.g., to your server, etc.
-    });
-    ```
