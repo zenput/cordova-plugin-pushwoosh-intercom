@@ -20,16 +20,7 @@
                 </intent-filter>
             </service>
         </config-file>
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <service android:name="com.zenput.push.FirebaseInstanceIdRouterService",
-                     android:stopWithTask="false">
-                <intent-filter>
-                    <action android:name="com.google.firebase.MESSAGING_EVENT" />
-                </intent-filter>
-            </service>
-        </config-file>
 
         <source-file src="src/android/FirebaseMessagingRouterService.java" target-dir="src/com/zenput/push" />
-        <source-file src="src/android/FirebaseInstanceIdRouterService.java" target-dir="src/com/zenput/push" />
     </platform>
 </plugin>
