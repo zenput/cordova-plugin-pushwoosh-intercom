@@ -9,8 +9,10 @@
 
     <!-- android -->
     <platform name="android">
-        <dependency id="pushwoosh-cordova-plugin" version="^7.17.0" />
-        <dependency id="cordova-plugin-intercom" version="^6.2.0" />
+
+        <!-- @author:david for some reason, this is adding pushwoosh-cordova-plugin variables to this plugin config inside plugins/android.json. @see #2 -->
+        <!-- <dependency id="pushwoosh-cordova-plugin" version="^7.17.0" /> -->
+        <!-- <dependency id="cordova-plugin-intercom" version="^6.2.0" /> -->
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <service android:name="com.zenput.push.FirebaseMessagingRouterService"

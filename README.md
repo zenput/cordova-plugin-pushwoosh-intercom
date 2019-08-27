@@ -2,6 +2,13 @@ This is a Cordova plugin for use in conjunction with [pushwoosh-cordova-plugin](
 
 # Set Up
 
+1. Install the Pushwoosh and Intercom plugins:
+
+    ```sh
+    cordova plugin add pushwoosh-cordova-plugin
+    cordova plugin add cordova-plugin-intercom
+    ```
+
 1. Install this plugin:
 
     ```sh
