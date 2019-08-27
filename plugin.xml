@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-pushwoosh-intercom" version="0.2.0">
-
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-pushwoosh-intercom" version="0.2.2">
     <name>cordova-plugin-pushwoosh-intercom</name>
-
     <description>
         Adds support for Intercom push notifications to an Android Cordova app that relies on Pushwoosh for push notifications.
     </description>
-
     <!-- android -->
     <platform name="android">
-
         <!-- @author:david for some reason, this is adding pushwoosh-cordova-plugin variables to this plugin config inside plugins/android.json. @see #2 -->
         <!-- <dependency id="pushwoosh-cordova-plugin" version="^7.17.0" /> -->
         <!-- <dependency id="cordova-plugin-intercom" version="^6.2.0" /> -->
-
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <service android:name="com.zenput.push.FirebaseMessagingRouterService"
-                     android:stopWithTask="false">
+            <service android:name="com.zenput.push.FirebaseMessagingRouterService" android:stopWithTask="false">
                 <intent-filter>
-                    <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                    <action android:name="com.google.firebase.MESSAGING_EVENT"/>
                 </intent-filter>
             </service>
         </config-file>
-
-        <source-file src="src/android/FirebaseMessagingRouterService.java" target-dir="src/com/zenput/push" />
+        <source-file src="src/android/FirebaseMessagingRouterService.java" target-dir="src/com/zenput/push"/>
     </platform>
 </plugin>
