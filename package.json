@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-pushwoosh-intercom",
+  "name": "@zenput/cordova-plugin-pushwoosh-intercom",
   "version": "0.2.2",
   "description": "Adds support for Intercom push notifications to an Android Cordova app that relies on Pushwoosh for push notifications",
   "main": "index.js",
