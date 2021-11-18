@@ -2,7 +2,7 @@ package com.zenput.push;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.pushwoosh.PushwooshFcmHelper;
+import com.pushwoosh.firebase.PushwooshFcmHelper;
 import io.intercom.android.sdk.push.IntercomPushClient;
 
 // See Pushwoosh Docs for more:
@@ -25,7 +25,7 @@ public class FirebaseMessagingRouterService extends FirebaseMessagingService {
     @Override
    public void onNewToken(String token) {
        // Send a new token to Pushwoosh
-       PushwooshFcmHelper.onTokenRefresh(this, token);
+       PushwooshFcmHelper.onTokenRefresh(token);
        // send the new token to Intercom
        IntercomPushClient intercomPushClient = new IntercomPushClient();
        intercomPushClient.sendTokenToIntercom(getApplication(), token);
